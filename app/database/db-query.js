@@ -8,8 +8,21 @@ module.exports = {
   account: {
     get: 'SELECT * FROM financial_account WHERE owner_id = $1',
     getOne: 'SELECT * FROM financial_account WHERE owner_id = $1 AND account_id = $2',
-    add: 'INSERT INTO financial_account ' +
-          '(owner_id, institution_code, account_type_code, last_four, account_nick_name, purpose) ' +
-          'VALUES ($1, $2, $3, $4, $5, $6)',
+    add: `INSERT INTO financial_account
+                (owner_id, institution_code, account_type_code, last_four, account_nick_name, purpose)
+             VALUES ($1, $2, $3, $4, $5, $6)`,
+  },
+  transaction: {
+    get: `SELECT * FROM transaction
+                WHERE account_id = $1
+                ORDER BY created_at DESC`,
+    getOne: `SELECT * FROM transaction
+                WHERE account_id = $1 AND transaction_id = $2
+                ORDER BY created_at DESC`,
+    recent: `SELECT * FROM transaction
+                WHERE account_id = $1
+                ORDER BY created_at DESC LIMIT 10`,
+    add: `INSERT INTO transaction (transaction_type, amount, timestamp, account_id, status)
+            VALUES ($1, $2, $3, $4, $5)`,
   },
 };

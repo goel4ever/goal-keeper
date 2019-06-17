@@ -3,12 +3,14 @@ const swaggerUi = require('swagger-ui-express');
 const swaggerDocument = require('../docs/swagger.json');
 
 const AccountsRoute = require('./accounts-route');
+const TransactionsRoute = require('./transactions-route');
 const TestRoute = require('./test-route');
 
 module.exports = (app) => {
   app.use(
     process.env.API_VERSION,
     AccountsRoute,
+    TransactionsRoute,
     TestRoute,
   );
 
