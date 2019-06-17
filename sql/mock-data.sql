@@ -1,9 +1,9 @@
-INSERT INTO account_owner (name)
+INSERT INTO account_owner (name, date_of_birth)
     VALUES
-        ('Anshul'),
-        ('Mansi');
+        ('Anshul', '1984-12-20'),
+        ('Mansi', '1987-11-04');
 
-INSERT INTO financial_institution (institution_code, institution_name, description)
+INSERT INTO financial_institution (institution_code, institution_name)
     VALUES
         ('JOB', 'Employer'),
 
@@ -108,3 +108,17 @@ INSERT INTO transaction_type (type_code, type)
         ('CRD', 'Credit'),
         ('DBT', 'Debit');
 
+INSERT INTO transaction_status (type_code, type)
+    VALUES
+        ('CMP', 'Completed'),
+        ('INP', 'In progress'),
+        ('SCH', 'Scheduled');
+
+
+--UPDATE products SET price = price * 1.10
+--  WHERE price <= 99.99
+--  RETURNING name, price AS new_price;
+
+--DELETE FROM transaction
+--  WHERE type_code = 'CRD'
+--  RETURNING *;
