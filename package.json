@@ -19,6 +19,7 @@
     "express": "^4.17.0",
     "helmet": "^3.18.0",
     "morgan": "^1.9.1",
+    "pg": "^7.11.0",
     "response-time": "^2.3.2",
     "swagger-ui-express": "^4.0.3",
     "winston": "^3.2.1",

@@ -7,7 +7,7 @@ module.exports = {
   },
   account: {
     get: 'SELECT * FROM financial_account WHERE owner_id = $1',
-    getOne: 'SELECT * FROM financial_account WHERE account_id = $1',
+    getOne: 'SELECT * FROM financial_account WHERE owner_id = $1 AND account_id = $2',
     add: 'INSERT INTO financial_account ' +
           '(owner_id, institution_code, account_type_code, last_four, account_nick_name, purpose) ' +
           'VALUES ($1, $2, $3, $4, $5, $6)',
