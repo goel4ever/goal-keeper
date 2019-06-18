@@ -13,13 +13,13 @@ module.exports = {
              VALUES ($1, $2, $3, $4, $5, $6)`,
   },
   transaction: {
-    get: `SELECT * FROM transaction
+    get: `SELECT transaction_id, transaction_type, amount, timestamp, account_id, status, purpose FROM transaction
                 WHERE account_id = $1
                 ORDER BY timestamp DESC`,
-    getOne: `SELECT * FROM transaction
+    getOne: `SELECT transaction_id, transaction_type, amount, timestamp, account_id, status, purpose FROM transaction
                 WHERE account_id = $1 AND transaction_id = $2
                 ORDER BY timestamp DESC`,
-    recent: `SELECT * FROM transaction
+    recent: `SELECT transaction_id, transaction_type, amount, timestamp, account_id, status, purpose FROM transaction
                 WHERE account_id = $1
                 ORDER BY timestamp DESC LIMIT 10`,
     add: `INSERT INTO transaction (transaction_type, amount, timestamp, account_id, status)

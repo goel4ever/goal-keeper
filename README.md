@@ -1,6 +1,6 @@
-# Node.js Template (Express.js framework based)
+# Goal Keeper
 
-Tiny application to be duplicated when setting up basic project for node.js to avoid forgetting basic configurations
+Putting together an idea for an application to start helping me in keeping track of finances, provide statistics, etc. We'll see how this application grows.
 
 ### API Endpoints
 * /

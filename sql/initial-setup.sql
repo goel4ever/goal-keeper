@@ -49,18 +49,14 @@ CREATE TABLE transaction (
     "timestamp" TIMESTAMPTZ NOT NULL,
     "account_id" SMALLINT NOT NULL REFERENCES financial_account (account_id) ON DELETE CASCADE ON UPDATE CASCADE,
     "status" VARCHAR(3) NOT NULL DEFAULT 'CMP' REFERENCES transaction_status (type_code) ON DELETE CASCADE ON UPDATE CASCADE,
+    "notes" VARCHAR(60),
     "modified_at" TIMESTAMPTZ,
     "created_at" TIMESTAMPTZ NOT NULL DEFAULT CURRENT_TIMESTAMP
 );
 
 --RELATIONSHIPS
 --ALTER TABLE financial_account ADD FOREIGN KEY ("owner_id") REFERENCES account_owner("owner_id");
---ALTER TABLE financial_account ADD FOREIGN KEY ("institution_code") REFERENCES financial_institution("institution_code");
---ALTER TABLE financial_account ADD FOREIGN KEY ("account_type_code") REFERENCES financial_account_type("account_type_code");
-
 --ALTER TABLE transaction ADD FOREIGN KEY ("transaction_type") REFERENCES transaction_type("type_code");
---ALTER TABLE transaction ADD FOREIGN KEY ("status") REFERENCES transaction_status("type_code");
---ALTER TABLE transaction ADD FOREIGN KEY ("account_id") REFERENCES financial_account("account_id");
 
 --CONSTRAINTS
 --ALTER TABLE prices_list ADD CONSTRAINT price_discount_check CHECK (price > 0);
