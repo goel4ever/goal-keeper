@@ -12,6 +12,10 @@ You won't be able to run the project without these configurations. For local dev
 * NODE_ENV=development
 * PORT=8000
 * API_VERSION=/v0
+* PGHOST=localhost
+* PGDATABASE=postgres
+* PGPORT=5432
+
 
 ### Development
 * Create a .env file and add the environment variables in the root folder
